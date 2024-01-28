@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Navigate, Route ,Routes} from "react-router-dom";
+import MemoryGame from './components/MemoryGame';
+import Result from './components/Result';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <h1>Memory Game</h1>
+      <div style={{flex: 1, height: '1.5px', backgroundColor: 'black', marginTop:20 }} ></div>
+      <Router>
+         <Routes>
+          <Route exact path='/' Component={MemoryGame}/>
+          <Route path='/result' Component={Result}/>
+         </Routes>
+      </Router>
     </div>
   );
 }

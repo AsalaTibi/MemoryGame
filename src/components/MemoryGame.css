@@ -1,0 +1,82 @@
+.players{
+   overflow-x: auto; /* Enable horizontal scrolling for small screens */
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+.player1{
+   display:inline-block;
+   float: left;
+   margin-left: 260px;
+   font-size: 20px;
+   padding: 10px;
+   border-radius: 10px;
+   font-weight: 600;
+}
+.player2{
+   display:inline-block;
+   float:right;
+   margin-right: 260px;
+   font-size: 20px;
+   padding: 10px;
+   border-radius: 10px;
+   font-weight: 600;
+   margin-bottom: 50px;
+}
+.card-grid {
+   margin-top: 100px;
+   display: grid;
+   position: absolute;
+   grid-template-columns:repeat(6,1fr);
+   grid-template-rows: repeat(3,1fr);
+   gap: 0.6em; 
+   width: 900px; 
+   height: 400px;
+   transform: translate(-50%,-50%);
+   left: 50%;
+   top: 50%;
+   box-sizing: border-box;
+}
+.card {
+   width: 100%;
+   height: 100%;
+   display: flex;  /* distribute space and align content in a container, even when the sizes of your items are unknown or dynamic. */
+   justify-content: center; /*centers the content horizontally within the container.*/
+   align-items: center;  /*centers the content vertically within the container.*/
+   font-size: 1.6em;
+   font-weight: bold;
+   background-color: #f0f0f0;
+   border: 2px solid #000000;
+   cursor: pointer;  /*it changes the cursor to a pointer, indicating that the element is clickable or interactive.*/
+   user-select: none;  /* it prevents the user from selecting any content within the element using the mouse or keyboard */
+ }
+ .card.flipped {
+   background-color: #f4c531;
+ }
+ 
+ .card.solved {
+   background-color: #8bc34a; /* Green color for solved cards */
+ }
+ @media (max-width: 768px) {
+   .card-grid {
+      grid-template-columns: repeat(2, 1fr);  }
+ 
+   .card {
+     font-size: 18px;
+     padding: 0.5rem;
+   }
+   .player1{
+      margin-left: 100px;
+   }
+   .player2{
+      margin-right: 100px;
+   }
+ }
+ @media (max-width: 480px) {
+   .card-grid {
+      grid-template-columns: 1fr;   }
+ 
+   .card {
+     font-size: 16px;
+     padding: 0.3rem;
+   }
+ }
